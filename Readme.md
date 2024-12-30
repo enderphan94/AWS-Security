@@ -4,7 +4,7 @@ https://enderphan.notion.site/AWS-1555a7fe2eef80138761ea8cfad3d063
 # 2. AWS Penetration Testing
 https://enderphan.notion.site/AWS-Pentest-de4443c089b748ef930a0aaf7da9c18e?pvs=4
 
-# Tools
+# 3. Tools
 
 The tool takes the profile configured in the AWS, you need to first configure the profile.
 
@@ -88,3 +88,5 @@ The output indicates potential vulnerabilities related to privilege escalation f
 
 These potential vulnerabilities could be exploited by the user to gain higher privileges within the AWS environment, potentially allowing unauthorized access to resources or sensitive operations.
 ```
+
+You can find other tools here: https://enderphan.notion.site/IAM-Escalation-1695a7fe2eef80d0a0b1e89fcb1b2233?pvs=97#1695a7fe2eef80d3a8ddd49dab3250e7
