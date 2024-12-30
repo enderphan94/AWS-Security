@@ -1,6 +1,24 @@
-# Notion
-
+# 1. AWS Security
 https://enderphan.notion.site/AWS-1555a7fe2eef80138761ea8cfad3d063
 
-# 1. Infra Security
-https://enderphan.notion.site/1555a7fe2eef801abbb7ca4562d4613d?v=1565a7fe2eef809eb940000c9e3b1c89
+# 2. AWS Penetration Testing
+https://enderphan.notion.site/AWS-Pentest-de4443c089b748ef930a0aaf7da9c18e?pvs=4
+
+# Tools
+
+1.	Without OpenAI Analysis
+
+```
+./IAM-main.py \
+    --profile myProfile \
+    --aws-escalate-path awsEscala.py
+```
+
+2. With OpenAI Analysis
+
+```
+./IAM-main.py \
+    --profile myProfile \
+    --aws-escalate-path awsEscala.py \
+    --openai-api-key <YOUR_API_KEY_HERE>
+```
