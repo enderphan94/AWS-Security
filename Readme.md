@@ -6,18 +6,20 @@ https://enderphan.notion.site/AWS-Pentest-de4443c089b748ef930a0aaf7da9c18e?pvs=4
 
 # Tools
 
-1.	Without OpenAI Analysis
+The tool takes the profile configured in the AWS, you need to first configure the profile.
 
-```
-./IAM-main.py \
+```aws configure --profile myProfile```
+
+1. Without OpenAI Analysis
+
+```./IAM-main.py \
     --profile myProfile \
     --aws-escalate-path awsEscala.py
 ```
 
 2. With OpenAI Analysis
 
-```
-./IAM-main.py \
+```./IAM-main.py \
     --profile myProfile \
     --aws-escalate-path awsEscala.py \
     --openai-api-key <YOUR_API_KEY_HERE>
