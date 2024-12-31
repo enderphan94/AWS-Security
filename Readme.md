@@ -4,7 +4,7 @@ https://enderphan.notion.site/AWS-1555a7fe2eef80138761ea8cfad3d063
 # 2. AWS Penetration Testing
 https://enderphan.notion.site/AWS-Pentest-de4443c089b748ef930a0aaf7da9c18e?pvs=4
 
-# 3. Tools
+# 3. Usage Script
 
 The tool takes the profile configured in the AWS, you need to first configure the profile.
 
@@ -90,3 +90,96 @@ These potential vulnerabilities could be exploited by the user to gain higher pr
 ```
 
 You can find other tools here: https://enderphan.notion.site/IAM-Escalation-1695a7fe2eef80d0a0b1e89fcb1b2233?pvs=97#1695a7fe2eef80d3a8ddd49dab3250e7
+
+# 4. Other Tools
+
+# Tools
+
+## **IAMActionHunter**
+
+https://github.com/RhinoSecurityLabs/IAMActionHunter
+
+Quickly and easily evaluate one or more IAM policies to find issues.
+
+This is a tool you can use to more quickly understand what the vulnerability might be across one policy or across multiple policies.
+
+## **IAMFinder**
+
+https://github.com/prisma-cloud/IAMFinder
+
+IAMFinder enumerates and finds users and IAM roles in a target AWS account.
+
+## **EnumerateIAM**
+
+https://github.com/andresriancho/enumerate-iam
+
+Enumerate the permissions associated with an AWS credential set. This tool tries to brute force all API calls allowed by the IAM policy. The calls performed by this tool are all non-destructive (only get* and list* calls are performed). Great for finding weaknesses you may not have manually found.
+
+## **PMapper**
+
+https://github.com/nccgroup/PMapper
+
+A tool for quickly evaluating IAM permissions in AWS.
+
+## **aws_escalate.py**
+
+https://github.com/RhinoSecurityLabs/Security-Research/blob/master/tools/aws-pentest-tools/aws_escalate.py
+
+A script that can help you find privesc paths.
+
+## **Pacu**
+
+https://github.com/RhinoSecurityLabs/pacu
+
+# 5. Enumeration commands
+
+First, we need to know our identity
+
+```aws sts get-caller-identity --profile <xxx>```
+
+And then we need to gather all information about the groups, policies and roles which are relevant to the current account:
+
+```
+aws iam list-groups
+
+aws iam list-groups-for-user --user-name <xxx>
+
+aws iam list-attached-user-policies --user-name <xxx>
+
+aws iam list-user-policies --user-name <xxx>
+
+aws iam list-attached-group-policies --group-name <xxx>
+
+aws iam list-group-policies --group-name <xxx>
+
+```
+
+And then roles:
+
+```
+
+aws iam list-roles # Get roles in the AWS account
+
+aws iam get-role --role-name <role-name>
+
+aws iam list-role-policies --role-name <name>
+
+aws iam get-role-policy --role-name <name> --policy-name <name> 
+
+aws iam list-attached-role-policies --role-name <role-name> 
+
+```
+
+List policy verions:
+
+```
+aws iam list-attached-group-policies --group-name <groupname>
+
+aws iam get-policy --policy-arn <policy_arn>
+
+aws iam list-policy-versions --policy-arn <arn>
+
+aws iam get-policy-version --policy-arn arn:aws:iam::123456789012:policy/example-policy --version-id <v1 or v2 or ...>
+
+aws iam set-default-policy-version --policy-arn <policy-arn> --version-id <new-version-id> --profile <XXX>
+```
