@@ -95,6 +95,12 @@ You can find other tools here: https://enderphan.notion.site/IAM-Escalation-1695
 
 # Tools
 
+## **Enumerate IAM permissions**
+
+https://github.com/andresriancho/enumerate-iam.git
+
+enumerate-iam.py tries to brute force all API calls allowed by the IAM policy. The calls performed by this tool are all non-destructive (only get* and list* calls are performed).
+
 ## **IAMActionHunter**
 
 https://github.com/RhinoSecurityLabs/IAMActionHunter
