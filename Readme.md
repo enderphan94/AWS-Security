@@ -189,3 +189,8 @@ aws iam get-policy-version --policy-arn arn:aws:iam::123456789012:policy/example
 
 aws iam set-default-policy-version --policy-arn <policy-arn> --version-id <new-version-id> --profile <XXX>
 ```
+
+# 6. Courses
+
+https://cybr.com/
+
